@@ -4,7 +4,7 @@ var textfield = document.getElementsByName("textfield")
 var saveBtn = document.getElementsByClassName("saveBtn")
 var today = document.getElementById("currentDay")
 
-today.innerText = `Today's date is ${moment().format("MMMM Do YYYY")}`
+today.innerText = `Today's date is ${moment().format(`MMMM Do YYYY`)}`
 
 // generate timeblocks
 for (let hour=9; hour<18; hour++) {   
@@ -18,18 +18,18 @@ for (let hour=9; hour<18; hour++) {
 }
 
 // change color of input box based on time
-for (let i=0; i<9; i++) {
-    var value = textfield[i].getAttribute("id")
-    if(rightNow > value){
-        textfield[i].classList.add("past");
-    }
-    if(rightNow == value){
-        textfield[i].classList.add("present");
-    }
-    if(rightNow < value){
-        textfield[i].classList.add("future");
-    }
-}
+    for (let i=0; i<9; i++) {
+        var value = textfield[i].getAttribute("id")
+        if(rightNow > value){
+            textfield[i].classList.add("past");
+        }
+        if(rightNow == value){
+            textfield[i].classList.add("present");
+        }
+        if(rightNow < value){
+            textfield[i].classList.add("future");
+        }
+    } 
 
 // save values to local storage, any x+9 values are to get it to match up with the hour in military time, which my ids use
 for(let x=0; x<9; x++) {
