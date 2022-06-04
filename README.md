@@ -1,5 +1,9 @@
-# calendar
+# work day calendar
 
+Deployed URL: https://joshmoran501.github.io/calendar/
+Github repository: https://github.com/joshmoran501/calendar
+
+<!-- Acceptance Criteria -->
 GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner
 THEN the current day is displayed at the top of the calendar

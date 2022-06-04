@@ -18,6 +18,7 @@ for (let hour=9; hour<18; hour++) {
 }
 
 // change color of input box based on time
+function colorHandler() {    
     for (let i=0; i<9; i++) {
         var value = textfield[i].getAttribute("id")
         if(rightNow > value){
@@ -30,6 +31,9 @@ for (let hour=9; hour<18; hour++) {
             textfield[i].classList.add("future");
         }
     } 
+}
+
+colorHandler()
 
 // save values to local storage, any x+9 values are to get it to match up with the hour in military time, which my ids use
 for(let x=0; x<9; x++) {
@@ -38,10 +42,30 @@ for(let x=0; x<9; x++) {
     function saveEvent () {
     localStorage.setItem(x+9,textfield[x].value)
     }
-    console.log(btnValue)
 }
 
 // add existing values to page after refresh
 for(let x=0; x<9; x++) {
     textfield[x].value= localStorage.getItem(x+9)
 }
+
+// automatically change textblock color at the hour mark
+function updateMoment() {
+    var currentMoment = moment().format("mm:ss")
+    if (currentMoment == "00:00") {
+    colorHandler()
+    }
+}
+
+setInterval(updateMoment, 1000)
+
+// change header date at midnight
+function updateDate() {
+    var midnight = moment().format("HH:mm:ss") 
+    if (midnight== "00:00:00") {
+    // today.innerText = `Today's date is ${moment().format(`MMMM Do YYYY`)}`
+    today.innerText = `Today's date is monkey`
+    }
+}
+
+setInterval(updateDate,1000)
