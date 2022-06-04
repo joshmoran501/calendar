@@ -1,7 +1,10 @@
 # work day calendar
 
 Deployed URL: https://joshmoran501.github.io/calendar/
+
 Github repository: https://github.com/joshmoran501/calendar
+
+![chrome-capture-2022-5-4](https://user-images.githubusercontent.com/104108180/172012190-9f079a25-e49f-40dd-93b1-e1a7936a9f7b.gif)
 
 <!-- Acceptance Criteria -->
 GIVEN I am using a daily planner to create a schedule
