@@ -63,8 +63,7 @@ setInterval(updateMoment, 1000)
 function updateDate() {
     var midnight = moment().format("HH:mm:ss") 
     if (midnight== "00:00:00") {
-    // today.innerText = `Today's date is ${moment().format(`MMMM Do YYYY`)}`
-    today.innerText = `Today's date is monkey`
+    today.innerText = `Today's date is ${moment().format(`MMMM Do YYYY`)}`
     }
 }
 
